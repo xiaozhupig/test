@@ -1,0 +1,17 @@
+pipeline{
+  agent any
+  parameters{
+    string(name:'username',defaultValue:'test',description:'用户名')
+    choice(name:'version',choices:['1.0','2.0','3.0'],description:'选择版本')
+    booleanParam(name:'is_boy',defaultValue:true,descripiton:'是否为男孩')
+  }
+  stages{
+    stage('test'){
+      steps{
+        script{
+          println 'java-version'
+        }
+      }
+    }
+  }
+}
